@@ -1,6 +1,6 @@
-import { getCatalog } from './_catalog';
-import { bodyOf, json, type ApiRequest } from './_http';
-import { prepareQuote } from '../shared/order';
+import { getCatalog } from './_catalog.js';
+import { bodyOf, json, type ApiRequest } from './_http.js';
+import { prepareQuote } from '../shared/order.js';
 import type { ServerResponse } from 'node:http';
 export default async function handler(req: ApiRequest, res: ServerResponse) {
   if (req.method !== 'POST') return json(res, 405, { error: 'Método não permitido.' });

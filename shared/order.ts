@@ -1,4 +1,4 @@
-import { itemKey, money, priceOf, type Catalog, type CartItem, type Receiving, type Quote } from './types';
+import { itemKey, money, priceOf, type Catalog, type CartItem, type Receiving, type Quote } from './types.js';
 export function prepareQuote(catalog: Catalog, input: unknown, receiving: Receiving): Quote {
   if (receiving !== 'pickup' && receiving !== 'delivery') throw new Error('Escolha como deseja receber.');
   if (!Array.isArray(input) || input.length < 1 || input.length > 50) throw new Error('O pedido precisa ter entre 1 e 50 variações.');

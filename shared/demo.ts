@@ -1,5 +1,5 @@
-import { expandedProducts } from './expanded-products';
-import type { Catalog, Product, Variant } from './types';
+import { expandedProducts } from './expanded-products.js';
+import type { Catalog, Product, Variant } from './types.js';
 const photos = (id: number) => [1, 2, 3].map(n => `/assets/p${id}-${n}.webp`);
 const sizes = (male = false, missing = '35') => (male ? ['37','38','39','40','41','42','43'] : ['34','35','36','37','38','39']).map(size => ({ size, available: size !== missing }));
 const variant = (id: string, color: string, hex: string, images: string[], male = false): Variant => ({ id, color, hex, images, available: true, sizes: sizes(male) });

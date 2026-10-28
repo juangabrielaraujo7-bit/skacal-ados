@@ -1,5 +1,5 @@
-import { demoCatalog } from '../shared/demo';
-import type { Catalog, Product } from '../shared/types';
+import { demoCatalog } from '../shared/demo.js';
+import type { Catalog, Product } from '../shared/types.js';
 export async function getCatalog(): Promise<Catalog> {
   const project = process.env.SANITY_PROJECT_ID;
   if (!project) return structuredClone(demoCatalog);

@@ -36,6 +36,8 @@ npm run build
 
 O projeto principal fica na raiz deste repositório. Na Vercel, use **Framework Preset: Vite**, **Root Directory: raiz**, **Build Command: npm run build** e **Output Directory: dist**. O arquivo `vercel.json` já define o build e o encaminhamento das páginas internas; as funções em `api/` atendem o catálogo e o pedido.
 
+O build também verifica as funções com as regras de módulos do Node. As importações relativas no servidor e em seus arquivos compartilhados usam a extensão `.js`, resolvida para os fontes TypeScript durante o desenvolvimento e para JavaScript após a compilação. `npm test` inclui execução das funções compiladas em um processo Node, cobrindo catálogo, pedido e indisponibilidade sem depender do Vite.
+
 Para publicar esta demonstração, nenhuma variável de ambiente é obrigatória. Sem configuração do Sanity, a aplicação mostra os 55 produtos demonstrativos. O Studio é um projeto separado dentro de `studio/` e não é a raiz de publicação da loja.
 
 Para usar o catálogo real, configure `SANITY_PROJECT_ID`, `SANITY_DATASET` e, apenas se necessário para leitura privada, `SANITY_API_READ_TOKEN` nas variáveis de ambiente da Vercel. Os valores secretos não devem entrar no Git. Veja abaixo como configurar o conteúdo e o contato da loja.
