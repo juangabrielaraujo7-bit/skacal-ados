@@ -1,4 +1,5 @@
 import { expandedProducts } from './expanded-products.js';
+import { storeWhatsapp } from './contact.js';
 import type { Catalog, Product, Variant } from './types.js';
 const photos = (id: number) => [1, 2, 3].map(n => `/assets/p${id}-${n}.webp`);
 const sizes = (male = false, missing = '35') => (male ? ['37','38','39','40','41','42','43'] : ['34','35','36','37','38','39']).map(size => ({ size, available: size !== missing }));
@@ -8,7 +9,7 @@ function product(id: string, name: string, category: string, price: number, vari
 }
 export const demoCatalog: Catalog = {
   mode: 'demo',
-  settings: { whatsapp: '', bannerTitle: 'Seu novo favorito.', bannerText: 'Escolhas para todos os seus momentos. Encontre o par que combina com você.', bannerImage: '/assets/p187-2.webp', bannerCategory: 'Ofertas' },
+  settings: { whatsapp: storeWhatsapp, bannerTitle: 'Seu novo favorito.', bannerText: 'Escolhas para todos os seus momentos. Encontre o par que combina com você.', bannerImage: '/assets/p187-2.webp', bannerCategory: 'Ofertas' },
   products: [
     ...expandedProducts,
     product('1001', 'Sapatilha Essencial', 'Sapatilhas', 119.90, [variant('preto', 'Preto', '#282724', photos(188))], { salePrice: 89.90, featured: true, line: 'Ska Confort' }),

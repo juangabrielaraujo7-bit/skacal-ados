@@ -40,6 +40,8 @@ O build também verifica as funções com as regras de módulos do Node. As impo
 
 Para publicar esta demonstração, nenhuma variável de ambiente é obrigatória. Sem configuração do Sanity, a aplicação mostra os 55 produtos demonstrativos. O Studio é um projeto separado dentro de `studio/` e não é a raiz de publicação da loja.
 
+WhatsApp informado pela loja: **(11) 94180-7394**, configurado em `shared/contact.ts` no formato internacional `5511941807394`. Os atalhos de atendimento abrem a conversa diretamente; o pedido mantém a revisão dos itens antes de abrir o WhatsApp com a mensagem preparada. Um contato preenchido no Sanity substitui esse número padrão.
+
 Para usar o catálogo real, configure `SANITY_PROJECT_ID`, `SANITY_DATASET` e, apenas se necessário para leitura privada, `SANITY_API_READ_TOKEN` nas variáveis de ambiente da Vercel. Os valores secretos não devem entrar no Git. Veja abaixo como configurar o conteúdo e o contato da loja.
 
 ## Demonstração e dados reais

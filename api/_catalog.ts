@@ -1,4 +1,5 @@
 import { demoCatalog } from '../shared/demo.js';
+import { storeWhatsapp } from '../shared/contact.js';
 import type { Catalog, Product } from '../shared/types.js';
 export async function getCatalog(): Promise<Catalog> {
   const project = process.env.SANITY_PROJECT_ID;
@@ -14,6 +15,6 @@ export async function getCatalog(): Promise<Catalog> {
   const { result } = await response.json();
   if (!Array.isArray(result?.products)) throw new Error('Catálogo inválido.');
   const products: Product[] = result.products.filter((p: Product) => p.id && p.reference && Number.isFinite(p.price) && p.price > 0 && p.variants?.length).map((p: Product) => ({ ...p, specifications: p.specifications || [], line: p.line || '', variants: p.variants.map(v => ({ ...v, images: v.images || [], sizes: v.sizes || [] })) }));
-  return { mode: 'live', products, settings: { whatsapp: '', bannerTitle: 'Seu novo favorito.', bannerText: 'Conheça a seleção da SKA Calçados.', bannerImage: '', bannerCategory: 'Todos', ...result.settings } };
+  return { mode: 'live', products, settings: { bannerTitle: 'Seu novo favorito.', bannerText: 'Conheça a seleção da SKA Calçados.', bannerImage: '', bannerCategory: 'Todos', ...result.settings, whatsapp: result.settings?.whatsapp || storeWhatsapp } };
 }
 
