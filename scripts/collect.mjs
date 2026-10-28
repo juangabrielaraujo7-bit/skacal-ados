@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';
+const sites={usaflex:'https://www.usaflex.com.br/',mezzo:'https://www.mezzopunto.com.br/',democrata:'https://www.democrata.com.br/',vizzano:'https://www.vizzano.com.br/',newface:'https://www.newfaceb2b.com.br/',wj:'https://wjstore.com.br/'};
+await Promise.all(Object.entries(sites).map(async([key,url])=>{try{const r=await fetch(url,{signal:AbortSignal.timeout(25000)});const html=await r.text();await fs.writeFile(`docs/sources/${key}.html`,html);const imgs=[...html.matchAll(/<img\b[^>]*>/gi)].map(x=>x[0]);console.log(key,r.status,JSON.stringify(imgs.filter(x=>/logo/i.test(x)).slice(0,8)),JSON.stringify(imgs.filter(x=>! /logo|icon|banner/i.test(x)).slice(0,10)));}catch(e){console.log(key,e.message)}}));

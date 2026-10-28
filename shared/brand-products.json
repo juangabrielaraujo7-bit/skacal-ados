@@ -1,0 +1,315 @@
+[
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Dourado Salto Bloco",
+    "images": [
+      "/assets/products/0-0.jpg",
+      "/assets/products/0-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-0"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Preta Salto Bloco",
+    "images": [
+      "/assets/products/1-0.jpg",
+      "/assets/products/1-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-1"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Marrom Salto Bloco",
+    "images": [
+      "/assets/products/2-0.jpg",
+      "/assets/products/2-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-2"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Marrom Salto Bloco",
+    "images": [
+      "/assets/products/3-0.jpg",
+      "/assets/products/3-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-3"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Tamanco Couro Marrom Salto Plataforma",
+    "images": [
+      "/assets/products/4-0.jpg",
+      "/assets/products/4-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-4"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Branca Marfim Salto Bloco",
+    "images": [
+      "/assets/products/5-0.jpg",
+      "/assets/products/5-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-5"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Sandália Em Couro Marrom Salto Bloco",
+    "images": [
+      "/assets/products/6-0.jpg",
+      "/assets/products/6-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-6"
+  },
+  {
+    "brand": "Usaflex",
+    "name": "Tamanco em Couro Floral Salto Bloco",
+    "images": [
+      "/assets/products/7-0.jpg",
+      "/assets/products/7-1.jpg"
+    ],
+    "source": "https://www.usaflex.com.br/",
+    "id": "brand-7"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Scarpin Feminino Salto Fino Vizzano 1122828 PRETO",
+    "images": [
+      "/assets/products/8-0.jpg",
+      "/assets/products/8-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-8"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Sandália Feminina Salto Fino Vizzano 6576203 OURO",
+    "images": [
+      "/assets/products/9-0.jpg",
+      "/assets/products/9-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-9"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Tênis Feminino Casual Vizzano 12141075 PRETO",
+    "images": [
+      "/assets/products/10-0.jpg",
+      "/assets/products/10-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-10"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Sandália Feminina Salto Fino Vizzano 62101155 OURO",
+    "images": [
+      "/assets/products/11-0.jpg",
+      "/assets/products/11-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-11"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Sandália Feminina Salto Grosso Vizzano 6499122 CHOCOLATE",
+    "images": [
+      "/assets/products/12-0.jpg",
+      "/assets/products/12-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-12"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Tênis Feminino Casual Vizzano 1389101 BRANCO",
+    "images": [
+      "/assets/products/13-0.jpg",
+      "/assets/products/13-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-13"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Sandália Feminina Salto Fino Vizzano 62491114 OURO",
+    "images": [
+      "/assets/products/14-0.jpg",
+      "/assets/products/14-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-14"
+  },
+  {
+    "brand": "Vizzano",
+    "name": "Sandália Feminina Flat Vizzano 6506127 PRETO",
+    "images": [
+      "/assets/products/15-0.jpg",
+      "/assets/products/15-1.jpg"
+    ],
+    "source": "https://www.clovis.com.br/",
+    "id": "brand-15"
+  },
+  {
+    "brand": "Democrata",
+    "name": "Tênis Harper Couro Azul",
+    "images": [
+      "/assets/products/16-0.jpg"
+    ],
+    "source": "https://www.democrata.com.br/",
+    "id": "brand-16"
+  },
+  {
+    "brand": "Democrata",
+    "name": "Tênis Harper Couro Preto",
+    "images": [
+      "/assets/products/17-0.jpg"
+    ],
+    "source": "https://www.democrata.com.br/",
+    "id": "brand-17"
+  },
+  {
+    "brand": "Democrata",
+    "name": "Sapato Social Slip On Marino Couro Mogno",
+    "images": [
+      "/assets/products/18-0.jpg"
+    ],
+    "source": "https://www.democrata.com.br/",
+    "id": "brand-18"
+  },
+  {
+    "brand": "Democrata",
+    "name": "Tênis Brad Ultra Light Creme/Bege",
+    "images": [
+      "/assets/products/19-0.jpg"
+    ],
+    "source": "https://www.democrata.com.br/",
+    "id": "brand-19"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "PAPETE ALANA EM COURO CAMEL",
+    "images": [
+      "/assets/products/20-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-20"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "PAPETE ALANA EM COURO PRETO",
+    "images": [
+      "/assets/products/21-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-21"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "MOCASSIM VALENCIA EM COURO PRETO",
+    "images": [
+      "/assets/products/22-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-22"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "SLINGBACK CLARA EM COURO OFF WHITE",
+    "images": [
+      "/assets/products/23-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-23"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "SLINGBACK CLARA EM COURO CARAMELO",
+    "images": [
+      "/assets/products/24-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-24"
+  },
+  {
+    "brand": "MZQ (Mezzo Punto)",
+    "name": "MOCASSIM CAMILA EM COURO NUDE",
+    "images": [
+      "/assets/products/25-0.jpg"
+    ],
+    "source": "https://www.mezzopunto.com.br/",
+    "id": "brand-25"
+  },
+  {
+    "brand": "WJ Acessórios",
+    "name": "Bolsa Transversal Pequena Com Alça Corrente",
+    "images": [
+      "/assets/products/26-0.jpg"
+    ],
+    "source": "https://wjstore.com.br/",
+    "id": "brand-26"
+  },
+  {
+    "brand": "WJ Acessórios",
+    "name": "Shopping Bag Grande Básica Com Recortes",
+    "images": [
+      "/assets/products/27-0.jpg"
+    ],
+    "source": "https://wjstore.com.br/",
+    "id": "brand-27"
+  },
+  {
+    "brand": "New Face",
+    "name": "Sandália New Face Couro Com Tiras Elásticas",
+    "images": [
+      "/assets/products/28-0.jpg"
+    ],
+    "source": "https://www.wnshoes.com.br/marcas/new-face/",
+    "id": "brand-28"
+  },
+  {
+    "brand": "New Face",
+    "name": "Sandália New Face Couro Beauty Com Elástico",
+    "images": [
+      "/assets/products/29-0.jpg"
+    ],
+    "source": "https://www.wnshoes.com.br/marcas/new-face/",
+    "id": "brand-29"
+  },
+  {
+    "brand": "New Face",
+    "name": "Sandália New Face Couro Plataforma",
+    "images": [
+      "/assets/products/30-0.jpg"
+    ],
+    "source": "https://www.wnshoes.com.br/marcas/new-face/",
+    "id": "brand-30"
+  },
+  {
+    "brand": "New Face",
+    "name": "Sandália New Face Couro Plataforma New Beauty",
+    "images": [
+      "/assets/products/31-0.jpg"
+    ],
+    "source": "https://www.wnshoes.com.br/marcas/new-face/",
+    "id": "brand-31"
+  },
+  {
+    "brand": "New Face",
+    "name": "Sandália New Face Couro Afivelada Salto Baixo Pérola",
+    "images": [
+      "/assets/products/32-0.jpg"
+    ],
+    "source": "https://www.wnshoes.com.br/marcas/new-face/",
+    "id": "brand-32"
+  }
+]

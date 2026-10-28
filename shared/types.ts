@@ -1,0 +1,12 @@
+export type SizeOption = { size: string; available: boolean };
+export type Variant = { id: string; color: string; hex: string; images: string[]; available: boolean; sizes: SizeOption[] };
+export type Product = { id: string; name: string; reference: string; category: string; brand?: string; audience: string; line: string; description: string; specifications: string[]; price: number; salePrice?: number; featured: boolean; requiresSize: boolean; variants: Variant[] };
+export type Settings = { whatsapp: string; bannerTitle: string; bannerText: string; bannerImage: string; bannerCategory: string };
+export type Catalog = { mode: 'demo' | 'live'; products: Product[]; settings: Settings };
+export type CartItem = { productId: string; variantId: string; size: string; quantity: number; unitPrice: number; name: string; reference: string; color: string; image: string };
+export type OrderItem = { productId: string; variantId: string; size: string; quantity: number };
+export type Receiving = 'pickup' | 'delivery';
+export type Quote = { mode: 'demo' | 'live'; items: CartItem[]; subtotal: number; issues: string[]; message: string; whatsapp: string };
+export const priceOf = (product: Product) => product.salePrice != null && product.salePrice > 0 && product.salePrice < product.price ? product.salePrice : product.price;
+export const money = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+export const itemKey = (item: Pick<OrderItem, 'productId' | 'variantId' | 'size'>) => `${item.productId}:${item.variantId}:${item.size}`;

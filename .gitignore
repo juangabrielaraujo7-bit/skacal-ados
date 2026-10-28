@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+.env.*
+!.env.example
+!studio/.env.example
+.vercel/
+*.log
+docs/sources/*.html
+docs/sources/*.txt
+studio/.sanity/
+studio/dist/
+test-results/
+*.tsbuildinfo
