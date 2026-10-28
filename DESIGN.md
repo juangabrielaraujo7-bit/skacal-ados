@@ -16,5 +16,8 @@ Instrument Serif regular nos banners, chamadas de coleção, títulos das catego
 ## Composição
 Hero espaçoso, título em duas linhas, calçado em fundo pedra sem círculo decorativo. Vitrines limpas com fotografia, marca, nome, preço e ação reconhecível. Respiros maiores entre seções. Assinatura tipográfica SKA em uma cor no cabeçalho e rodapé; arquivo da logo original preservado. Logos das marcas parceiras mantidos.
 
+### Campanhas aprovadas por referência
+Banner principal de botas com título serifado em grande escala atrás do produto recortado; fundo pedra, botão contornado e texto de apoio discreto. Segunda campanha com fotografia de sandálias em uso à esquerda, cenário café e texto claro à direita. No celular, produto e texto são reenquadrados em uma composição vertical. Textos e botões são HTML, sem palavras gravadas na fotografia. Banners levam diretamente às respectivas categorias.
+
 ## Estados
 Foco visível café; seleção com fundo pedra e borda café. Erros continuam com cor semântica. Valores em tabulares. Contraste de leitura preservado, tamanhos responsivos, movimento curto e desativado com preferência de movimento reduzido.
