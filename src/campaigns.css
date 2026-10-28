@@ -92,8 +92,21 @@
   .campaign-copy .campaign-lead { font-size: 16px; margin-bottom: 6px; }
   .campaign-copy p { max-width: 275px; font-size: 11px; }
   .campaign-button { margin-top: 18px; min-height: 43px; font-size: 10px; padding: 11px 16px; }
-  .campaign-lifestyle { height: 560px; margin-top: 39px; }
-  .campaign-lifestyle > img { height: 285px; inset: auto 0 0; object-fit: cover; object-position: 22% center; }
+  .campaign-lifestyle {
+    height: 560px;
+    margin-top: 39px;
+    background-image: url('/assets/campaigns/sandalias-editorial.webp');
+    background-size: auto 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+  .campaign-lifestyle > img {
+    height: 67%;
+    inset: auto 0 0;
+    object-fit: cover;
+    object-position: 34% center;
+    mask-image: linear-gradient(to bottom, transparent, #000 20%);
+  }
   .campaign-lifestyle-copy { padding: 29px 27px 0; width: 100%; margin: 0; }
   .campaign-lifestyle h2 { font-size: 52px; line-height: .95; margin-bottom: 14px; }
   .campaign-lifestyle h2 br { display: none; }
@@ -103,8 +116,8 @@
 @media (min-width: 481px) and (max-width: 767px) {
   .campaign-hero { height: 500px; }
   .campaign-boot { width: min(460px, calc(100% - 20px)); height: auto; aspect-ratio: 1; right: 10px; bottom: 85px; }
-  .campaign-lifestyle { height: 390px; }
-  .campaign-lifestyle > img { inset: 0; width: 100%; height: 100%; object-position: 25% center; }
+  .campaign-lifestyle { height: 390px; background-image: none; }
+  .campaign-lifestyle > img { inset: 0; width: 100%; height: 100%; object-position: 25% center; mask-image: none; }
   .campaign-lifestyle-copy { width: 48%; margin-left: auto; padding: 40px 24px 0 0; }
   .campaign-lifestyle h2 { font-size: 47px; }
   .campaign-lifestyle h2 br { display: initial; }
