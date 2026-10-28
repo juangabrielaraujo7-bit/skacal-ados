@@ -22,7 +22,8 @@ npm run build
 
 - 55 produtos ilustrativos, 13 categorias e sete seleções por marca, incluindo linhas femininas e masculinas e bolsas.
 - Páginas próprias de categorias e marcas, navegação pelo histórico, acesso direto e recarregamento.
-- Banner comercial, logo original, destaques, ofertas e seleção Ska Confort.
+- Identidade editorial em marfim, carvão e café, com Instrument Serif nos banners e Manrope nos produtos e controles. Assinatura tipográfica SKA em uma cor; arquivo da logo original preservado.
+- Banner comercial, destaques, ofertas e seleção Ska Confort.
 - Busca por nome, referência, categoria, marca, linha ou público; filtros por marca, número disponível e preço; ordenação.
 - Galeria, cores com fotos correspondentes e disponibilidade por número. O Scarpin Clássico demonstra duas cores com numerações diferentes.
 - Seleção obrigatória de cor e tamanho quando aplicável. Bolsas dispensam tamanho. A bota demonstra uma variação esgotada.
