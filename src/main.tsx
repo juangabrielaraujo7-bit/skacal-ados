@@ -5,6 +5,7 @@ import './styles.css';
 import './storefront.css';
 import './identity.css';
 import './campaigns.css';
+import './brand-pages.css';
 import '@fontsource/instrument-serif/latin-400.css';
 import '@fontsource/manrope/latin-400.css';
 import '@fontsource/manrope/latin-600.css';

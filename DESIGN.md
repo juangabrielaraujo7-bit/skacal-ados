@@ -19,5 +19,8 @@ Hero espaçoso, título em duas linhas, calçado em fundo pedra sem círculo dec
 ### Campanhas aprovadas por referência
 Banner principal de botas com título serifado em grande escala atrás do produto recortado; fundo pedra, botão contornado e texto de apoio discreto. Segunda campanha com fotografia de sandálias em uso à esquerda, cenário café e texto claro à direita. No celular, produto e texto são reenquadrados em uma composição vertical. Textos e botões são HTML, sem palavras gravadas na fotografia. Banners levam diretamente às respectivas categorias.
 
+### Páginas de marcas
+Cabeçalho em café, com logo e nome agrupados e descrição clara. Ao lado, fotografia de um produto da própria marca em fundo pedra, com acesso aos detalhes. Assinatura SKA pequena no canto da imagem. O produto é selecionado entre os itens correspondentes à marca/linha, com alternativa automática quando a seleção preferida não estiver disponível no catálogo. No celular, identificação e descrição aparecem acima da fotografia, mantendo o logo junto do título. Mesmo padrão nas sete marcas.
+
 ## Estados
 Foco visível café; seleção com fundo pedra e borda café. Erros continuam com cor semântica. Valores em tabulares. Contraste de leitura preservado, tamanhos responsivos, movimento curto e desativado com preferência de movimento reduzido.

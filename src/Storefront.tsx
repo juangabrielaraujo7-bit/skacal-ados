@@ -26,5 +26,20 @@ export function CategoryTiles({ products }: { products: Product[] }) {
 export function CategoryIntro({ category, products, query }: { category: string | null; products: Product[]; query?: string }) {
   const brand = brands.find(b=>b.name===category);
   const total=products.filter(p=>p.category===category||p.brand===category||p.line===category||p.audience===category).length;
-  return <div className="container listing-intro"><nav className="breadcrumbs" aria-label="Você está aqui"><PageLink to="/">Início</PageLink><CaretRight size={12}/><PageLink to="/catalogo">Catálogo</PageLink>{category !== 'Todos' && <><CaretRight size={12}/><span>{category || 'Página não encontrada'}</span></>}</nav><div className="listing-banner">{brand && (brand.name === 'Ska Confort' ? <BrandMark line="CONFORT"/> : <img src={brand.logo} alt={brand.name}/>)}<div><h1>{query ? `Busca por “${query}”` : category === 'Todos' ? 'Todo o catálogo' : category || 'Página não encontrada'}</h1><p>{brand?.text || (category==='Ofertas' ? 'Favoritos com preços especiais. Encontre a sua próxima boa escolha.' : 'Explore os modelos, compare os detalhes e encontre o que combina com você.')}</p></div>{total>0 && <span className="listing-watermark">SKA<span>CALÇADOS</span></span>}</div></div>;
+  return <div className="container listing-intro"><nav className="breadcrumbs" aria-label="Você está aqui"><PageLink to="/">Início</PageLink><CaretRight size={12}/><PageLink to="/catalogo">Catálogo</PageLink>{category !== 'Todos' && <><CaretRight size={12}/><span>{category || 'Página não encontrada'}</span></>}</nav>{brand ? <BrandBanner brand={brand} products={products}/> : <div className="listing-banner"><div><h1>{query ? `Busca por “${query}”` : category === 'Todos' ? 'Todo o catálogo' : category || 'Página não encontrada'}</h1><p>{category==='Ofertas' ? 'Favoritos com preços especiais. Encontre a sua próxima boa escolha.' : 'Explore os modelos, compare os detalhes e encontre o que combina com você.'}</p></div>{total>0 && <span className="listing-watermark">SKA<span>CALÇADOS</span></span>}</div>}</div>;
+}
+
+function BrandBanner({ brand, products }: { brand: typeof brands[number]; products: Product[] }) {
+  const preferred: Record<string, string> = { 'Ska Confort':'1001', Usaflex:'brand-0', 'MZQ (Mezzo Punto)':'brand-22', Vizzano:'brand-9', Democrata:'botas-1', 'New Face':'brand-32', 'WJ Acessórios':'brand-27' };
+  const matching = products.filter(p=>p.brand===brand.name || p.line===brand.name);
+  const hasImage = (p: Product) => p.variants.some(v=>v.images.length>0);
+  const product = matching.find(p=>p.id===preferred[brand.name] && hasImage(p)) || matching.find(p=>p.featured && hasImage(p)) || matching.find(hasImage);
+  const image = product?.variants.find(v=>v.images.length>0)?.images[0];
+  return <section className="brand-banner" aria-labelledby="brand-banner-title">
+    <div className="brand-banner-content">
+      <div className="brand-banner-heading"><div className="brand-banner-logo">{brand.name==='Ska Confort' ? <BrandMark line="CONFORT"/> : <img src={brand.logo} alt=""/>}</div><h1 id="brand-banner-title">{brand.name}</h1></div>
+      <p>{brand.text}</p>
+    </div>
+    <div className="brand-banner-visual">{product && image && <a className="brand-banner-product" href={`#produto/${encodeURIComponent(product.id)}`} aria-label={`Ver ${product.name}`}><img src={image} alt={product.name} width="600" height="600" fetchPriority="high"/></a>}<span className="brand-banner-signature"><BrandMark/></span></div>
+  </section>;
 }
