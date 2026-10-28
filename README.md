@@ -28,7 +28,7 @@ npm run build
 - Seleção obrigatória de cor e tamanho quando aplicável. Bolsas dispensam tamanho. A bota demonstra uma variação esgotada.
 - Carrinho salvo no navegador, quantidade, remoção, subtotal calculado em centavos e escolha de recebimento.
 - Conferência no servidor, apresentação de indisponibilidade e aceitação explícita de mudanças de preço antes de preparar novamente.
-- Mensagem com referências, variações, quantidades, valores e recebimento. Sem telefone configurado, permite visualizar e copiar, sem inventar destinatário.
+- Mensagem com referências, variações, quantidades, valores e recebimento, preparada para abrir diretamente no WhatsApp da loja.
 - Caminho para dúvidas por produto. Nenhum pagamento, cupom, frete gratuito ou reserva de estoque.
 - Modais nativos com contenção de foco, fechamento por Escape, estados vazios, carregamento, falha e botões com nomes acessíveis.
 

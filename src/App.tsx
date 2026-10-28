@@ -2,7 +2,7 @@ import { storeWhatsapp } from '../shared/contact.js';
 import { brands, categoryPath, resolvePage } from '../shared/navigation';
 import { BrandStrip, CategoryTiles, CategoryIntro, PageLink, navigate } from './Storefront';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { ArrowRight, ArrowLeft, Bag, MagnifyingGlass, X, Plus, Minus, Trash, Check, SlidersHorizontal, WhatsappLogo, Storefront, Truck, Copy, CaretDown, Star, Package, WarningCircle } from '@phosphor-icons/react';
+import { ArrowRight, ArrowLeft, Bag, MagnifyingGlass, X, Plus, Minus, Trash, Check, SlidersHorizontal, WhatsappLogo, Storefront, Truck, CaretDown, Star, Package, WarningCircle } from '@phosphor-icons/react';
 import { itemKey, money, priceOf, type Catalog, type CartItem, type Product, type Quote, type Receiving } from '../shared/types';
 
 const storageKey = 'ska-cart-v1';
@@ -63,7 +63,7 @@ export function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null), [catalogError, setCatalogError] = useState(''), [refreshing, setRefreshing] = useState(false);
   const [cart, setCart] = useState<CartItem[]>(loadCart), [cartOpen, setCartOpen] = useState(false), [hash, setHash] = useState(location.hash);
   const [search, setSearch] = useState(new URLSearchParams(location.search).get('q') || ''), [path, setPath] = useState(location.pathname), [brandFilter, setBrandFilter] = useState(''), [sizeFilter, setSizeFilter] = useState(''), [maxPrice, setMaxPrice] = useState(''), [sort, setSort] = useState('featured'), [filtersOpen, setFiltersOpen] = useState(false);
-  const [receiving, setReceiving] = useState<Receiving>('pickup'), [quote, setQuote] = useState<Quote | null>(null), [pendingQuote, setPendingQuote] = useState<Quote | null>(null), [orderError, setOrderError] = useState(''), [busy, setBusy] = useState(false), [copied, setCopied] = useState(false), [helpMessage, setHelpMessage] = useState(''), [toast, setToast] = useState('');
+  const [receiving, setReceiving] = useState<Receiving>('pickup'), [quote, setQuote] = useState<Quote | null>(null), [pendingQuote, setPendingQuote] = useState<Quote | null>(null), [orderError, setOrderError] = useState(''), [busy, setBusy] = useState(false), [helpMessage, setHelpMessage] = useState(''), [toast, setToast] = useState('');
   async function refresh() {
     setRefreshing(true);
     try { const response = await fetch('/api/catalog', { cache: 'no-store' }); if (!response.ok) throw new Error(); setCatalog(await response.json()); setCatalogError(''); }
@@ -72,7 +72,7 @@ export function App() {
   }
   useEffect(() => { void refresh(); const timer = window.setInterval(() => { if (document.visibilityState === 'visible') void refresh(); }, 60000); const onFocus = () => void refresh(); window.addEventListener('focus', onFocus); return () => { clearInterval(timer); window.removeEventListener('focus', onFocus); }; }, []);
   useEffect(() => { function changed() { setHash(location.hash); } window.addEventListener('hashchange', changed); return () => window.removeEventListener('hashchange', changed); }, []);
-  useEffect(() => { try { localStorage.setItem(storageKey, JSON.stringify(cart)); } catch { setToast('Não foi possível salvar o carrinho neste navegador.'); } setQuote(null); setPendingQuote(null); setCopied(false); setOrderError(''); }, [cart, receiving]);
+  useEffect(() => { try { localStorage.setItem(storageKey, JSON.stringify(cart)); } catch { setToast('Não foi possível salvar o carrinho neste navegador.'); } setQuote(null); setPendingQuote(null); setOrderError(''); }, [cart, receiving]);
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(''), 3500); return () => clearTimeout(timer); }, [toast]);
   const products = catalog?.products || [];
   const category = resolvePage(path, [...new Set(products.map(p=>p.category))]);
@@ -122,13 +122,12 @@ export function App() {
     } catch (error) { setOrderError(error instanceof Error ? error.message : 'Não foi possível preparar o pedido.'); }
     finally { setBusy(false); }
   }
-  async function copy(text: string) { try { await navigator.clipboard.writeText(text); setCopied(true); } catch { setOrderError('Não foi possível copiar automaticamente. Selecione a mensagem abaixo e copie.'); } }
   const phone = (quote?.whatsapp || catalog?.settings.whatsapp || storeWhatsapp).replace(/\D/g, '');
   const canWhatsapp = /^\d{10,15}$/.test(phone);
   const contactUrl = 'https://wa.me/' + phone + '?text=' + encodeURIComponent('Olá, SKA Calçados! Gostaria de ajuda com o catálogo.');
   function openHelp(text: string) {
     if (canWhatsapp) window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
-    else { setCopied(false); setHelpMessage(text); }
+    else { setHelpMessage(text); }
   }
   const categories = ['Todos', ...new Set(['Sapatilhas', 'Rasteiras', 'Tamancos', 'Anabelas', 'Scarpins', 'Mocassins', 'Botas', 'Tênis casuais', 'Slip-on', 'Sociais', 'Sapatênis', 'Sandálias', 'Bolsas e acessórios', ...products.map(p => p.category).filter(Boolean)])];
   const filterCount = Number(!!sizeFilter) + Number(!!maxPrice) + Number(!!brandFilter);
@@ -173,10 +172,10 @@ export function App() {
       {orderError && <div className="error-state" role="alert">{orderError}</div>}
       {pendingQuote && <div className="price-change" role="alert"><h3>Os preços foram atualizados</h3>{pendingQuote.items.filter(i => i.unitPrice !== cart.find(c => itemKey(c) === itemKey(i))?.unitPrice).map(i => <p key={itemKey(i)}>{i.name}: {money(cart.find(c => itemKey(c) === itemKey(i))!.unitPrice)} → <strong>{money(i.unitPrice)}</strong></p>)}<p>Novo subtotal: {money(pendingQuote.subtotal)}</p><button className="primary full" onClick={() => { setCart(pendingQuote.items); setPendingQuote(null); setToast('Preços atualizados. Confira e prepare seu pedido novamente.'); }}>Aceitar preços atualizados</button></div>}
       {!quote && !pendingQuote && <button className="primary full" disabled={busy} onClick={() => void prepare()}><WhatsappLogo size={21}/>{busy ? 'Conferindo o catálogo…' : 'Preparar pedido'}<ArrowRight size={19}/></button>}
-      {quote && <div className="prepared"><h3><Check size={19}/> {quote.mode === 'demo' ? 'Mensagem de demonstração pronta' : 'Mensagem pronta para revisão'}</h3><p className="small">{canWhatsapp ? 'Revise a mensagem antes de abrir o WhatsApp.' : 'O número da SKA ainda precisa ser configurado. Você pode visualizar e copiar a mensagem.'}</p><textarea aria-label="Mensagem do pedido" readOnly value={quote.message} rows={12}/><button className="primary full" onClick={() => void copy(quote.message)}>{copied ? <Check/> : <Copy/>}{copied ? 'Mensagem copiada' : 'Copiar mensagem'}</button>{canWhatsapp && <a className="secondary full" href={`https://wa.me/${phone}?text=${encodeURIComponent(quote.message)}`} target="_blank" rel="noopener noreferrer">Abrir WhatsApp<ArrowRight/></a>}</div>}
+      {quote && <div className="prepared"><h3><Check size={19}/>Pedido pronto</h3>{canWhatsapp ? <a className="primary full" href={`https://wa.me/${phone}?text=${encodeURIComponent(quote.message)}`} target="_blank" rel="noopener noreferrer"><WhatsappLogo size={20}/>Abrir WhatsApp<ArrowRight/></a> : <p className="small">O atendimento está temporariamente indisponível. Tente novamente em instantes.</p>}</div>}
       <button className="text-button continue" onClick={() => setCartOpen(false)}><ArrowLeft size={17}/>Continuar escolhendo</button>
     </> : <div className="empty-state"><Bag size={48}/><h3>Seu carrinho está esperando</h3><p>Encontre um favorito para chamar de seu.</p><button className="primary" onClick={() => { setCartOpen(false); goCategory('Todos'); }}>Explorar o catálogo<ArrowRight size={19}/></button></div>}</Modal>}
-    {helpMessage && <Modal title="Fale com a SKA" close={() => setHelpMessage('')}><div className="message-dialog"><WhatsappLogo size={35} className="gold"/><h2>Fale com a SKA</h2><p>{canWhatsapp ? 'Sua mensagem está pronta. Abra o WhatsApp para conversar com a equipe.' : 'O número da loja ainda precisa ser configurado. Por enquanto, você pode copiar sua dúvida.'}</p><textarea aria-label="Mensagem de dúvida" readOnly value={helpMessage} rows={5}/><button className="primary full" onClick={() => void copy(helpMessage)}>{copied ? <Check/> : <Copy/>}{copied ? 'Mensagem copiada' : 'Copiar mensagem'}</button>{canWhatsapp && <a className="secondary full" target="_blank" rel="noopener noreferrer" href={`https://wa.me/${phone}?text=${encodeURIComponent(helpMessage)}`}>Abrir WhatsApp<ArrowRight/></a>}<p className="small muted" role="status">{copied ? 'Mensagem copiada para a área de transferência.' : 'Nenhuma mensagem é enviada automaticamente.'}</p></div></Modal>}
+    {helpMessage && <Modal title="Fale com a SKA" close={() => setHelpMessage('')}><div className="message-dialog"><WhatsappLogo size={35} className="gold"/><h2>Fale com a SKA</h2>{canWhatsapp ? <a className="primary full" target="_blank" rel="noopener noreferrer" href={`https://wa.me/${phone}?text=${encodeURIComponent(helpMessage)}`}>Abrir WhatsApp<ArrowRight/></a> : <p>O atendimento está temporariamente indisponível. Tente novamente em instantes.</p>}</div></Modal>}
     {toast && <div className="toast" role="status"><Check size={18}/>{toast}</div>}
   </>;
 }
